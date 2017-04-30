@@ -5,9 +5,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 import EngagementsContainer from './Engagements/EngagementsContainer.js'
-import EngagementViewContainer from './Engagements/EngagementViewContainer.js'
-import NotificationViewContainer from './Notifications/NotificationViewContainer.js'
-import LatestDealsViewContainer from 'Engagements/LatestDeals/LatestDealsViewContainer.js'
+
 import EngagementReducer from './Engagements/reducers/reducers.js'
 import thunk from 'redux-thunk'
 
@@ -17,7 +15,7 @@ const store = createStore(
     routing: routerReducer,
     deals: EngagementReducer
   }),
-  applyMiddleware(thunk),
+  applyMiddleware(thunk)
 );
 store.subscribe( state => console.log(state) );
 
@@ -28,9 +26,6 @@ const AppRoutes = () => { return (
     <Provider store={store} >
       <Router history={ browserHistory } >
         <Route path="/" component={ EngagementsContainer } >
-          <Route path="notification/4444" component={ NotificationViewContainer } />
-          <Route path="deal/4444" component={ LatestDealsViewContainer } />
-          <Route path="promotion/4444" component={ EngagementViewContainer } />
         </Route>
       </Router>
     </Provider>

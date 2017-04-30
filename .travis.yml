@@ -1,18 +1,17 @@
 language: node_js
 node_js:
-  - "4"
-  - "5"
-  - "6"
-  - "7"
+- '4'
+- '5'
+- '6'
+- '7'
 install:
-  - npm install
-  - npm run build
+- npm install
+- npm run build
 deploy:
-  provider: pages
+  provider: heroku
+  api_key:
+    secure: YYMlsmOpn5TTSryA1jkv8TGSXtGssByhqMv6vSDU638Mz2lmAZhnaxzorTEEUXW+J64Z5OTBQVQnqzjsJIH02M4kHjfbNa/88iETrHNRgJ/Yn1IhdJOY+sP1Kj8v5GOfv/lMeTGWdYsdQSchzHSOTUtA4ipXwo7vvHvcDUvOICDTPR1pk8g9v90Og4ps8AvZ0kZTmxS6tH30UfNXYKg0Af9Z63RDQJqU0xcW5W43seik2vZQfg5ZpdHjIuJRXvyNkqetP5d7fwXkSd/+yQOcGvGzVuN+cM8FGEyNrtKYmWQhrIEKbKSFER8orZfZcm0+FhftTBQLOfU7b4P7Ht81krZP9qs1i2f60OKr0JYKeR8Hbs/AyopG0fQUkcvp/qlFFxEfmqMGmBZRJbw2VLd4lVxcvCdMrchDsYE5ODpFDYxK0bQe+7hkSdpwT6Ap8VNzn2B2CuaKAKDmxoHMvOF02VNxsgh9xcoZEqy3UgdGEjc/YuqsXHnrUfnczc/mBQSyWLQeW2Dyjweu9iH0Z3g2EA9aHPz8tEcYiz52BFCZXOWElw5VnCHJUm5O4fw4hhb9khpvj40//CaueG72wQV63grcvivP0Dw+qtcPauiDGxfjxdbF9ADvTRLlyWUrHsFvMzksm/zUcTHkMd+laNVXTUyuHTzHJwetrKLwT8kcTNE=
+  app: mars-images
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  repo: progressive-cards/progressive-cards.github.io
-  target_branch: master
-  local_dir: docs
   on:
-    branch: master
+    repo: sagar12861/mars
