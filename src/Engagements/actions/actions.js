@@ -1,4 +1,4 @@
-import Deals from 'API/Deals'
+import NASA from 'API/NASA'
 
 function deals(state,data) {
   return { type: 'deals', state: state, data: data || null };
@@ -7,7 +7,7 @@ function deals(state,data) {
 
 function loadDeals(dispatch) {
   dispatch(deals('LOADING'));
-  Deals.get()
+  NASA.get()
   .then( data => { return dispatch(deals('LOADED',data)) } )
   .catch( error => {
      console.dir(error);
