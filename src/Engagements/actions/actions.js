@@ -7,7 +7,7 @@ function deals(state,data) {
 
 function loadDeals(dispatch) {
   dispatch(deals('LOADING'));
-  NASA.get()
+  NASA.search()
   .then( data => { return dispatch(deals('LOADED',data)) } )
   .catch( error => {
      console.dir(error);
