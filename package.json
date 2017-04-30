@@ -2,10 +2,11 @@
   "name": "inspired",
   "version": "1.0.0",
   "description": "A Progressive Web App with react and redux",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha ./src/**/*.spec.js",
-    "start": "webpack-dev-server --port  1414 --content-base ./docs --compress",
+    "start": "node server.js",
+    "developer-start": "webpack-dev-server --port  1414 --content-base ./docs --compress",
     "build": "webpack",
     "watch": "webpack --watch"
   },
@@ -49,6 +50,7 @@
     "webpack-manifest-plugin": "^1.1.0"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "history": "^4.6.1",
     "material-design-lite": "^1.3.0",
     "preact": "^7.2.0",
