@@ -1,11 +1,14 @@
-import { ActionType } from './actions.js';
 
-function doImageList(state,action ){
-   if( action.type === ActionType.LOAD_IMAGES )
-     return Object.assign({},state,{ LOAD_IMAGES: {
-         state: action.state,
-         data: action.data
-     }});
+const doImagesList = (state,action) => {
+    
+    if(action.type === 'IMAGE_LIST' ) return Object.assign({},state,{
+        IMAGE_LIST: {
+            status: action.status,
+            data: action.data
+        }
+    });
+    
+    return state;
 };
 
-export { doImageList }
+export { doImagesList };
