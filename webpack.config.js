@@ -52,7 +52,12 @@ const config = {
 			template: path.join(__dirname, 'src', 'index.tpl.html'),
 			MANIFEST_FILENAME: 'manifest.json' 
 		}),
-		new webpack.optimize.OccurrenceOrderPlugin()
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new webpack.DefinePlugin({
+          "process.env": { 
+          NODE_ENV: JSON.stringify("production") 
+        }
+})
 	],
 	resolve: {
 		modules: [
