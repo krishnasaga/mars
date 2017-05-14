@@ -1,2 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from 'Layout/Layout';
 
-console.log('Hello');
+ReactDOM.render(<Layout />,document.getElementById('app'));
