@@ -32,7 +32,9 @@ const config = {
     devServer: {
       historyApiFallback: true
     },
-	entry: path.join(__dirname, 'src', 'app.js'),
+	entry: {
+		app: path.join(__dirname, 'src', 'app.js')
+	},
 	output: {
 		filename: '[name].build.js',
 	    chunkFilename: '[name]-[id].js',
